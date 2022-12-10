@@ -28,7 +28,6 @@ public class target : MonoBehaviour
     void Update()
     {
         float step = moveSpeed * Time.deltaTime;
-        print(nextMovePoint);
 
         if (nextMovePoint == -1 || dist <= 0)
         {
