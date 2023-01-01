@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 4712946554079136447}
   - component: {fileID: 4712946554079136444}
   - component: {fileID: 2086434506587070179}
+  - component: {fileID: 3105742143354152846}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -297,9 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 6742802108236351816}
-  mouseSensitivity: 100
-  playerSpeed: 10
-  jumpForce: 10
+  playerSpeed: 6
+  jumpForce: 6
 --- !u!143 &2086434506587070179
 CharacterController:
   m_ObjectHideFlags: 0
@@ -311,13 +311,25 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 1.6
   m_Radius: 0.35
   m_SlopeLimit: 55
   m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3105742143354152846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716242428264909597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2fefbad5821a44395cdd65b27341c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4716261321373186025
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +508,7 @@ GameObject:
   - component: {fileID: 4683901875298947129}
   - component: {fileID: 4694258083165123947}
   - component: {fileID: 4712487357349711020}
+  - component: {fileID: 1621261165}
   m_Layer: 0
   m_Name: R_Body
   m_TagString: Untagged
@@ -577,11 +590,24 @@ MeshCollider:
   m_GameObject: {fileID: 4716387092363912973}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300014, guid: 1dc2a27ad3a63d24bad7f1c6d159013e, type: 3}
+--- !u!65 &1621261165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716387092363912973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06611758, y: 0.17961027, z: 0.59381795}
+  m_Center: {x: 0.00007737096, y: -0.011686976, z: -0.02750337}
 --- !u!1 &4716722877600628051
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +702,7 @@ GameObject:
   - component: {fileID: 6742802108236351816}
   - component: {fileID: 6742802108236351814}
   - component: {fileID: 6742802108236351817}
+  - component: {fileID: 35633205}
   m_Layer: 0
   m_Name: FpsCam
   m_TagString: Untagged
@@ -751,6 +778,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6742802108236351819}
   m_Enabled: 1
+--- !u!114 &35633205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742802108236351819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4765acbea402fe84e8ce0b8e82c4945b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742802108542489485
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,9 +814,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6742802108542489485}
-  m_LocalRotation: {x: -0, y: -0.060932253, z: -0, w: 0.9981419}
-  m_LocalPosition: {x: 0.07, y: -0.138, z: 0.464}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.010525818, y: -0.079246275, z: -0.00083681033, w: 0.9967992}
+  m_LocalPosition: {x: 0.096, y: -0.11, z: 0.54}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4712487357349711023}
@@ -788,7 +827,7 @@ Transform:
   - {fileID: 4717902675936323097}
   m_Father: {fileID: 6742802108236351816}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -6.987, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.21, y: -9.091, z: 0}
 --- !u!114 &6742802108542489483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,9 +923,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsCam: {fileID: 6742802108236351814}
-  range: 100
-  damage: 10
-  force: 40
+  range: 80
+  damage: 4
+  force: 25
 --- !u!4 &6745646653357979600 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4054100971495624, guid: 57bf5071e0a1c8947b8918a8f96184a6, type: 3}
