@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float damage = 10f;
     public float force = 40f;
+    public float timeBetweenFires;
 
     void Update()
     {
@@ -26,10 +27,11 @@ public class Gun : MonoBehaviour
     {
 
         RaycastHit hit;
-        
+
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-
+            Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+            Debug.DrawRay(transform.position, forward, Color.red);
             //Debug.Log(hit.transform.name);
             Target target = hit.transform.GetComponent<Target>();
 
@@ -42,10 +44,9 @@ public class Gun : MonoBehaviour
             
             if(hit.rigidbody != null)
             {
-
                 hit.rigidbody.AddForce(-hit.normal * force);
-
             }
+            
         }
         
     }

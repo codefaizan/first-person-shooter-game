@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 moveDirection;
     public float playerSpeed;
+    public float playerNormalSpeed;
+    public float playerShiftSpeed;
     public float jumpForce = 6f;
     float gravity = 20f;
     float verticalVelocity;
@@ -24,9 +26,21 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerMove()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            playerSpeed = playerShiftSpeed;
+        }
+        else
+        {
+            playerSpeed = playerNormalSpeed;
+        }
+
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        
         moveDirection *= playerSpeed * Time.deltaTime;
         moveDirection = transform.TransformDirection(moveDirection);
+
+        
 
         ApplyGravity();
 
@@ -45,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             verticalVelocity = jumpForce;
-            print("isgrounded");
+            //print("isgrounded");
         }
     }
 
